@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Nieoficjalny symulator egzaminu ISTQB Certified Tester Foundation Level v4.0. 40 pytań, 60 minut i analiza wyniku." />
+    <meta name="description" content="Nieoficjalny symulator egzaminu ISTQB Certified Tester Foundation Level (CTFL) v4.0: 40 pytań, 60 minut, analiza wyniku w sześciu obszarach tematycznych. Wynik symulacji nie jest certyfikatem." />
     <meta name="theme-color" content="#080f1c" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <title>ISTQB Lab — Foundation Level</title>
+    <title>ISTQB Lab — symulator egzaminu CTFL</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -38,11 +38,12 @@
       <section class="view landing" id="landingView" aria-labelledby="landingTitle">
         <div class="landing__hero">
           <div class="hero-copy">
-            <div class="eyebrow"><span></span> Symulator CTFL v4.0.1</div>
-            <h1 id="landingTitle">Sprawdź się.<br /><em>Pewnie zapewnij certyfikat.</em></h1>
+            <div class="eyebrow"><span></span> Nieoficjalny symulator • CTFL v4.0</div>
+            <h1 id="landingTitle">Symulator egzaminu<br /><em>ISTQB Foundation Level.</em></h1>
             <p class="hero-copy__lead">
-              Przećwicz egzamin ISTQB Foundation Level w warunkach zbliżonych do prawdziwego.
-              Oryginalne pytania, egzaminacyjny czas i pełna analiza wyniku.
+              Przećwicz 40 pytań w warunkach zbliżonych do prawdziwego egzaminu: limit czasu,
+              losowa kolejność pytań i odpowiedzi oraz analiza wyniku w sześciu obszarach tematycznych.
+              Pytania są autorskie, a wynik symulacji nie jest certyfikatem.
             </p>
 
             <div class="landing__actions">
@@ -50,57 +51,43 @@
                 Rozpocznij test
                 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" /></svg>
               </button>
-              <span class="microcopy">Bez logowania • zapis postępu w przeglądarce</span>
+              <span class="microcopy">Bez logowania i rejestracji</span>
             </div>
 
-            <div class="duration-card" aria-labelledby="durationTitle">
-              <div>
-                <span class="duration-card__label" id="durationTitle">Czas trwania</span>
-                <strong>Wybierz wariant egzaminu</strong>
-              </div>
-              <div class="duration-options" role="radiogroup" aria-label="Czas trwania egzaminu">
-                <label class="duration-option">
-                  <input type="radio" name="duration" value="60" checked />
-                  <span class="duration-option__check" aria-hidden="true"></span>
-                  <span><strong>60 minut</strong><small>Standardowy wariant</small></span>
-                </label>
-                <label class="duration-option">
-                  <input type="radio" name="duration" value="75" />
-                  <span class="duration-option__check" aria-hidden="true"></span>
-                  <span><strong>75 minut</strong><small>+25% język angielski</small></span>
-                </label>
-              </div>
+            <div class="duration-card">
+              <span class="duration-card__label">Czas trwania</span>
+              <strong>60 minut</strong>
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Podsumowanie egzaminu">
+          <div class="hero-visual" aria-label="Podsumowanie symulowanego egzaminu">
             <div class="exam-card">
               <div class="exam-card__top">
-                <span>EXAM OVERVIEW</span>
+                <span>EGZAMIN — PRZEGLĄD</span>
                 <span class="status-pill"><i></i> GOTOWY</span>
               </div>
               <div class="exam-card__title">
                 <span>CTFL</span>
                 <div>
                   <strong>Certified Tester</strong>
-                  <small>Foundation Level · v4.0</small>
+                  <small>Foundation Level • sylabus v4.0.1</small>
                 </div>
               </div>
               <div class="exam-card__stats">
                 <div><strong>40</strong><span>pytań</span></div>
                 <div><strong>40</strong><span>punktów</span></div>
-                <div><strong>65%</strong><span>do zdania</span></div>
+                <div><strong>65%</strong><span>do zaliczenia</span></div>
               </div>
               <div class="exam-card__modules" aria-label="Struktura tematyczna testu">
                 <div class="exam-card__module" style="--w: 20%"><span></span><small>Fundamenty</small></div>
                 <div class="exam-card__module" style="--w: 15%"><span></span><small>Cykl życia</small></div>
                 <div class="exam-card__module" style="--w: 10%"><span></span><small>Statyczne</small></div>
-                <div class="exam-card__module" style="--w: 27.5%"><span></span><small>Techniki</small></div>
+                <div class="exam-card__module" style="--w: 27.5%"><span></span><small>Projektowanie</small></div>
                 <div class="exam-card__module" style="--w: 22.5%"><span></span><small>Zarządzanie</small></div>
                 <div class="exam-card__module" style="--w: 5%"><span></span><small>Narzędzia</small></div>
               </div>
               <div class="exam-card__foot">
-                <span><i class="dot dot--green"></i> Jedna odpowiedź</span>
+                <span><i class="dot dot--green"></i> Jedna odpowiedź na pytanie</span>
                 <span><i class="dot dot--amber"></i> Brak punktów ujemnych</span>
               </div>
             </div>
@@ -120,7 +107,7 @@
             <span class="eyebrow eyebrow--compact">Jak to działa</span>
             <h2>Testuj jak na egzaminie.</h2>
           </div>
-          <p>Progres zapisuje się automatycznie. Po zakończeniu zobaczysz wynik, mocne strony i wyjaśnienie każdego pytania.</p>
+          <p>Progres zapisuje się automatycznie. Po zakończeniu zobaczysz wynik, najsłabsze obszary i wyjaśnienie każdej odpowiedzi.</p>
         </div>
 
         <div class="feature-grid">
@@ -130,7 +117,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10M9 12h10M9 19h10" /><circle cx="4" cy="5" r="1" /><circle cx="4" cy="12" r="1" /><circle cx="4" cy="19" r="1" /></svg>
             </div>
             <h3>40 pytań</h3>
-            <p>Struktura zgodna z CTFL v4.0.1: od podstaw testowania po zarządzanie testami.</p>
+            <p>Struktura zgodna z sylabusem CTFL v4.0.1: od fundamentów testowania po zarządzanie aktywnościami testowymi. Pytania oznaczone poziomami K1–K3.</p>
           </article>
           <article class="feature-card">
             <span class="feature-card__number">02</span>
@@ -138,7 +125,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
             </div>
             <h3>Limit czasu</h3>
-            <p>Odliczanie nie zatrzymuje się przy zmianie karty. Po 60 minutach test zakończy się sam.</p>
+            <p>Licznik nie zatrzymuje się przy zmianie karty. Po 60 minutach test zakończy się sam.</p>
           </article>
           <article class="feature-card">
             <span class="feature-card__number">03</span>
@@ -146,13 +133,13 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V4M16 19v-7M22 19H2" /></svg>
             </div>
             <h3>Analiza wyniku</h3>
-            <p>Wynik w sześciu obszarach tematycznych oraz szczegółowe wyjaśnienia wszystkich odpowiedzi.</p>
+            <p>Wynik w sześciu obszarach tematycznych, wskazanie najsłabszych obszarów oraz wyjaśnienie każdej odpowiedzi wraz z tą, którą zaznaczyłeś.</p>
           </article>
         </div>
 
         <div class="notice">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg>
-          <p><strong>To jest niezależny materiał przygotowawczy.</strong> Pytania są oryginalne i nie pochodzą z oficjalnego zestawu egzaminacyjnego. Wynik aplikacji nie jest certyfikatem ISTQB.</p>
+          <p><strong>To niezależny materiał przygotowawczy.</strong> Pytania są autorskie i nie pochodzą z oficjalnego zestawu egzaminacyjnego. Wynik symulacji nie jest certyfikatem, a projekt nie jest powiązany z ISTQB.</p>
         </div>
       </section>
 
@@ -168,7 +155,7 @@
               <span id="progressBar"></span>
             </div>
           </div>
-          <button class="nav-toggle" id="mapButton" type="button">
+          <button class="nav-toggle" id="mapButton" type="button" aria-label="Mapa pytań" aria-expanded="false">
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4h5v5H3zM12 4h5v5h-5zM3 11h5v5H3zM12 11h5v5h-5z" /></svg>
             Mapa
           </button>
@@ -187,9 +174,9 @@
               </button>
             </div>
             <div class="legend">
-              <span><i class="legend__dot legend__dot--answered"></i> odpowiedziane</span>
-              <span><i class="legend__dot legend__dot--flagged"></i> oznaczone</span>
-              <span><i class="legend__dot"></i> bez odpowiedzi</span>
+              <span><i class="legend__dot legend__dot--answered"></i> Odpowiedziane</span>
+              <span><i class="legend__dot legend__dot--flagged"></i> Oznaczone</span>
+              <span><i class="legend__dot"></i> Bez odpowiedzi</span>
             </div>
             <div class="question-grid" id="questionGrid"></div>
             <button class="button button--finish button--full" id="finishButton" type="button">
@@ -211,9 +198,9 @@
               </div>
 
               <div class="question-card__body">
-                <span class="question-type" id="questionType">Pytanie K1 · Wybierz jedną odpowiedź</span>
-                <h1 id="questionText">Treść pytania</h1>
+                <span class="question-type" id="questionType">FL-1.1.1 · Poziom K1 · jedna odpowiedź</span>
                 <div class="scenario" id="questionScenario" hidden></div>
+                <h1 id="questionText">Treść pytania</h1>
                 <div class="answers" id="answers" role="radiogroup" aria-label="Możliwe odpowiedzi"></div>
               </div>
 
@@ -222,7 +209,7 @@
                   <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m13 4-6 6 6 6" /></svg>
                   Poprzednie
                 </button>
-                <span class="keyboard-hint">Wybierz jedną odpowiedź</span>
+                <span class="question-hint">Odpowiedź możesz zmieniać w dowolnym momencie</span>
                 <button class="button button--primary" id="nextButton" type="button">
                   Dalej
                   <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" /></svg>
@@ -241,6 +228,7 @@
             <span class="eyebrow"><span></span> Test zakończony</span>
             <h1 id="resultsTitle">Czas na Twój wynik.</h1>
             <p id="resultMessage">Przeanalizuj odpowiedzi i przygotuj się do kolejnego podejścia.</p>
+            <p class="result-disclaimer">Wynik symulacji, nie certyfikat ISTQB. Pytania są autorskie i nie pochodzą z oficjalnego zestawu egzaminacyjnego.</p>
             <div class="result-actions">
               <button class="button button--primary" id="newExamButton" type="button">
                 Spróbuj ponownie
@@ -266,7 +254,7 @@
             <span class="result-stat__icon result-stat__icon--blue">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l3 2M9 3h6" /></svg>
             </span>
-            <div><small>Czas rozwiązania</small><strong id="timeSpent">00:00</strong></div>
+            <div><small id="timeSpentLabel">Czas pracy</small><strong id="timeSpent">00:00</strong></div>
           </div>
           <div class="result-stat">
             <span class="result-stat__icon result-stat__icon--green">
@@ -291,8 +279,8 @@
         <div class="results-grid">
           <section class="panel domain-panel" aria-labelledby="domainsTitle">
             <div class="panel__head">
-              <div><span>ANALIZA OBSZARÓW</span><h2 id="domainsTitle">Wynik według tematów</h2></div>
-              <span class="passing-key"><i></i> Próg testu: 26 pkt</span>
+              <div><span>ANALIZA OBSZARÓW</span><h2 id="domainsTitle">Wynik według obszarów</h2></div>
+              <span class="passing-key"><i></i> Próg zaliczenia: 26 / 40 (65%)</span>
             </div>
             <div class="domain-list" id="domainResults"></div>
             <div class="insight" id="insightBox"></div>
@@ -301,11 +289,11 @@
           <aside class="panel next-panel" aria-labelledby="nextTitle">
             <span class="panel__kicker">Dalszy krok</span>
             <h2 id="nextTitle">Co ćwiczyć?</h2>
-            <p id="recommendationText">Przejrzyj wyjaśnienia i skup się na najsłabszym obszarze.</p>
+            <p id="recommendationText">Przejdź przez wyjaśnienia i skup się na najsłabszych obszarach.</p>
             <div class="focus-list" id="focusList"></div>
             <div class="exam-facts">
               <div><span>Próg zaliczenia</span><strong>26 / 40</strong></div>
-              <div><span>Procent</span><strong>65%</strong></div>
+              <div><span>Próg procentowy</span><strong>65%</strong></div>
             </div>
           </aside>
         </div>
@@ -318,7 +306,7 @@
             </div>
             <div class="review-filters" role="group" aria-label="Filtr odpowiedzi">
               <button class="review-filter is-active" type="button" data-filter="all">Wszystkie <span id="filterAll">40</span></button>
-              <button class="review-filter" type="button" data-filter="incorrect">Błędne <span id="filterIncorrect">0</span></button>
+              <button class="review-filter" type="button" data-filter="incorrect">Błędne i bez odpowiedzi <span id="filterIncorrect">0</span></button>
               <button class="review-filter" type="button" data-filter="correct">Poprawne <span id="filterCorrect">0</span></button>
             </div>
           </div>
@@ -328,8 +316,8 @@
     </main>
 
     <footer class="site-footer" id="siteFooter">
-      <p>Przygotowane do nauki • Nieoficjalny symulator ISTQB Foundation Level v4.0</p>
-      <p>Wynik nie zastępuje egzaminu ani certyfikatu ISTQB.</p>
+      <p>Materiał do nauki • Nieoficjalny symulator ISTQB CTFL v4.0 (sylabus v4.0.1)</p>
+      <p>Wynik nie zastępuje egzaminu ani certyfikatu ISTQB. Projekt nie jest powiązany z ISTQB.</p>
     </footer>
 
     <dialog class="confirm-dialog" id="finishDialog">
@@ -338,7 +326,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5M12 17h.01" /><path d="M10.3 3.8 2.2 18a2 2 0 0 0 1.7 3h16.2a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0Z" /></svg>
         </span>
         <h2>Zakończyć test?</h2>
-        <p id="finishDialogText">Odpowiedzi zostaną ocenione i nie będzie można wrócić do egzaminu.</p>
+        <p id="finishDialogText">Odpowiedzi zostaną ocenione i nie będzie można wrócić do testu.</p>
         <div class="confirm-summary" id="finishSummary"></div>
         <div class="confirm-dialog__actions">
           <button class="button button--secondary" value="cancel">Kontynuuj test</button>
@@ -353,7 +341,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8" /><path d="M12 9v4l3 2M9 3h6" /></svg>
         </span>
         <h2>Czas minął</h2>
-        <p>Limit egzaminacyjny dobiegł końca. Twój wynik jest już gotowy.</p>
+        <p>Limit czasu dobiegł końca. Test został zakończony automatycznie, a wynik jest już gotowy.</p>
         <div class="confirm-dialog__actions">
           <button class="button button--primary" value="ok">Zobacz wynik</button>
         </div>

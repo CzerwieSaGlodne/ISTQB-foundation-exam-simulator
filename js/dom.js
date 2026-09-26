@@ -9,10 +9,11 @@
     "closeNavButton", "navBackdrop", "questionLabel", "flagButton", "questionType",
     "questionText", "questionScenario", "answers", "previousButton", "nextButton",
     "mobileFinishButton", "resultHero", "resultsTitle", "resultMessage", "newExamButton",
-    "printButton", "scoreRing", "scoreNumber", "scorePercent", "timeSpent", "correctCount",
-    "incorrectCount", "unansweredCount", "domainResults", "insightBox", "recommendationText",
-    "focusList", "filterAll", "filterIncorrect", "filterCorrect", "reviewList", "finishDialog",
-    "finishDialogText", "finishSummary", "timeoutDialog", "toast", "siteFooter",
+    "printButton", "scoreRing", "scoreNumber", "scorePercent", "timeSpentLabel", "timeSpent",
+    "correctCount", "incorrectCount", "unansweredCount", "domainResults", "insightBox",
+    "recommendationText", "focusList", "filterAll", "filterIncorrect", "filterCorrect",
+    "reviewList", "finishDialog", "finishDialogText", "finishSummary", "timeoutDialog", "toast",
+    "siteFooter",
   ];
 
   function cacheDom(app) {

@@ -1,6 +1,6 @@
-# ISTQB Lab — Foundation Level (PL)
+# ISTQB Lab — symulator egzaminu CTFL
 
-Niezależny symulator egzaminu **ISTQB Certified Tester Foundation Level v4.0.1** przygotowany w języku polskim. Aplikacja pozwala przećwiczyć 40 pytań w warunkach zbliżonych do prawdziwego egzaminu, a następnie sprawdzić wynik, czas i poziom przygotowania w każdym obszarze tematycznym.
+Niezależny, nieoficjalny symulator egzaminu **ISTQB Certified Tester Foundation Level (CTFL) v4.0** (sylabus v4.0.1), przygotowany w języku polskim. Aplikacja pozwala przećwiczyć 40 pytań w warunkach zbliżonych do prawdziwego egzaminu, a następnie sprawdzić wynik, czas i poziom przygotowania w każdym obszarze tematycznym. Wynik symulacji nie jest certyfikatem.
 
 ![Ekran startowy ISTQB Lab](/screenshots/screenshot-2.png)
 
@@ -12,8 +12,8 @@ Projekt powstał w ramach ćwiczeń z wykorzystania AI w pracy nad oprogramowani
 
 ## Funkcje
 
-- 40 autorskich pytań z czterema wariantami odpowiedzi,
-- dwa warianty czasowe: 60 i 75 minut,
+- 40 autorskich pytań z czterema wariantami odpowiedzi, oznaczonych poziomami K1–K3 i numerami rozdziałów sylabusu (FL-x.y.z),
+- limit czasu: 60 minut, zgodnie z CTFL v4.0,
 - próg zaliczenia: 26/40 punktów (65%),
 - losowa kolejność pytań i odpowiedzi,
 - nieprzerwany licznik czasu,
@@ -21,21 +21,25 @@ Projekt powstał w ramach ćwiczeń z wykorzystania AI w pracy nad oprogramowani
 - automatyczny zapis postępu w `localStorage`,
 - wznawianie testu po odświeżeniu strony,
 - szczegółowy wynik w sześciu obszarach tematycznych,
-- przegląd wszystkich odpowiedzi wraz z wyjaśnieniami,
+- przegląd wszystkich odpowiedzi wraz z wyjaśnieniami i filtrem błędów,
 - możliwość wydrukowania wyniku,
 - responsywny interfejs oraz podstawowa obsługa czytników ekranu.
 
 ## Struktura egzaminu
 
-| Obszar                                  | Liczba pytań |
-| --------------------------------------- | -----------: |
-| Fundamenty testowania                   |            8 |
-| Testowanie w cyklu życia oprogramowania |            6 |
-| Testowanie statyczne                    |            4 |
-| Analiza i projektowanie testów          |           11 |
-| Zarządzanie aktywnościami testowymi     |            9 |
-| Narzędzia testowe                       |            2 |
-| **Razem**                               |       **40** |
+Nazwy obszarów odpowiadają rozdziałom sylabusu CTFL v4.0.1. Aplikacja użyje tych samych nazw w analizie wyniku.
+
+| Obszar                                  | Liczba pytań | K1 | K2 | K3 |
+| --------------------------------------- | -----------: | -: | -: | -: |
+| Fundamenty testowania                   |            8 |  2 |  6 |  0 |
+| Testowanie w cyklu życia oprogramowania |            6 |  2 |  4 |  0 |
+| Testowanie statyczne                    |            4 |  2 |  2 |  0 |
+| Analiza i projektowanie testów          |           11 |  0 |  6 |  5 |
+| Zarządzanie aktywnościami testowymi     |            9 |  1 |  5 |  3 |
+| Narzędzia testowe                       |            2 |  1 |  1 |  0 |
+| **Razem**                               |       **40** |  **8** | **24** | **8** |
+
+Próg zaliczenia to 26/40 punktów (65%), zgodnie z zasadami CTFL.
 
 ## Uruchomienie
 
@@ -64,15 +68,15 @@ Aplikację można również otworzyć bezpośrednio w `istqb-foundation-pl/index
 ├── istqb-foundation-pl/        # uruchamialna aplikacja
 │   ├── index.html               # interfejs aplikacji
 │   ├── styles.css               # entrypoint cascade stylów
-│   ├── styles/                  # tokeny, layout, widoki, responsywność i druk
-│   ├── app.js                   # bootstrap i integracja modułów
+│   ├── styles/                  # tokeny, layout, widoki, responsywność, tryb ciemny i druk
+│   ├── app.js                   # bootstrap: budowa `app`, zdarzenia, wczytanie stanu
 │   ├── questions.js             # bank 40 pytań
 │   ├── js/
 │   │   ├── namespace.js         # przestrzeń nazw modułów
-│   │   ├── config.js            # stałe egzaminu
-│   │   ├── utils.js             # formatowanie, losowanie i escaping
+│   │   ├── config.js            # stałe egzaminu i nazwy obszarów
+│   │   ├── utils.js             # formatowanie czasu, losowanie, odmiana i escaping
 │   │   ├── question-bank.js     # walidacja banku pytań
-│   │   ├── dom.js               # cache DOM i przełączanie widoków
+│   │   ├── dom.js               # cache DOM, przełączanie widoków i toasty
 │   │   ├── storage.js           # localStorage i walidacja stanu
 │   │   ├── state.js             # stan próby i operacje na nim
 │   │   ├── timer.js             # licznik czasu
@@ -92,6 +96,19 @@ Jeżeli Node.js jest dostępny, wszystkie pliki JavaScript można sprawdzić pol
 Get-ChildItem -Recurse -Filter *.js | ForEach-Object { node --check $_.FullName }
 ```
 
+## Struktura pytań
+
+Każde pytanie w `questions.js` ma:
+
+- `id`, `chapter` (1–6) i `k` — poziom wymagań wiedzy (`K1` zapamiętanie, `K2` zrozumienie, `K3` zastosowanie),
+- `ref` — numer celu sylabusu, np. `FL-4.2.2`; widoczny w widoku egzaminu i w przeglądzie odpowiedzi,
+- `text` — treść pytania, a opcjonalne `scenario` — wstęp sytuacyjny wyświetlany przed pytaniem,
+- `options` (cztery), `correct` (indeks 0–3) oraz `explanation`.
+
+Kolejność pytań i wariantów odpowiedzi losuje aplikacja, dlatego `correct` zawsze wskazuje indeks w `options`, a nigdy literę na ekranie.
+
+Rozkład jest zgodny z certyfikacją: 40 pytań, 26 punktów na zaliczenie, 60 minut.
+
 ## Ważne
 
-To niezależny materiał przygotowawczy. Pytania są autorskie i nie pochodzą z oficjalnego zestawu egzaminacyjnego ISTQB. Wynik aplikacji nie jest certyfikatem, a projekt nie jest powiązany ani akredytowany przez ISTQB. Przed prawdziwym egzaminem należy zweryfikować aktualne zasady i materiały oficjalne: [ISTQB CTFL v4.0](https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/).
+To niezależny materiał przygotowawczy. Pytania są autorskie i nie pochodzą z oficjalnego zestawu egzaminacyjnego ISTQB. Wynik symulacji nie jest certyfikatem, a projekt nie jest powiązany ani akredytowany przez ISTQB. Przed prawdziwym egzaminem należy zweryfikować aktualne zasady i materiały oficjalne: [ISTQB CTFL v4.0](https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/).

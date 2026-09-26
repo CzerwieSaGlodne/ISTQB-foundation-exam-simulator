@@ -21,7 +21,7 @@
   function startNewExam(app, durationSeconds) {
     const allowedDurations = Object.values(app.config.DURATIONS);
     if (!allowedDurations.includes(durationSeconds)) {
-      durationSeconds = app.config.DURATIONS[60];
+      durationSeconds = app.config.DURATIONS[app.config.BASE_DURATION_MINUTES];
     }
 
     const startedAt = Date.now();

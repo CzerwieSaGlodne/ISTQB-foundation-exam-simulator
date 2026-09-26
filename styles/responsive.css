@@ -4,12 +4,6 @@
     gap: 32px;
   }
 
-  .duration-card {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
   .hero-visual {
     transform: scale(0.92);
   }
@@ -34,6 +28,11 @@
     text-align: center;
   }
 
+  /* Przy wycentrowanym hero <br> nie ma sensu, wiec naglowek zostaje w dwoch liniach. */
+  .hero-copy h1 br {
+    display: none;
+  }
+
   .hero-copy__lead {
     margin-inline: auto;
   }
@@ -45,7 +44,7 @@
   }
 
   .duration-card {
-    align-items: stretch;
+    align-items: baseline;
     text-align: left;
   }
 
@@ -182,14 +181,6 @@
     padding: 15px;
   }
 
-  .duration-options {
-    flex-direction: column;
-  }
-
-  .duration-option {
-    width: 100%;
-  }
-
   .hero-visual {
     min-height: 420px;
     transform: none;
@@ -304,7 +295,7 @@
     font-size: 11px;
   }
 
-  .keyboard-hint {
+  .question-hint {
     display: none;
   }
 

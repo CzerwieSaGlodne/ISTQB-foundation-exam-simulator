@@ -4,9 +4,7 @@
   const namespace = window.ISTQB;
 
   function getSelectedDuration(app) {
-    const selected = document.querySelector('input[name="duration"]:checked');
-    const minutes = Number(selected?.value);
-    return app.config.DURATIONS[minutes] || app.config.DURATIONS[60];
+    return app.config.DURATIONS[app.config.BASE_DURATION_MINUTES];
   }
 
   function bind(app) {

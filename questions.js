@@ -6,13 +6,13 @@ window.ISTQB_QUESTIONS = [
     id: "q01",
     chapter: 1,
     k: "K1",
-    // FL-1.1.1
+    ref: "FL-1.1.1",
     text: "Przed odbiorem aplikacji trzeba sprawdzić jej zgodność z obowiązującymi wymaganiami regulacyjnymi. Który rezultat jest typowym celem testowania?",
     options: [
-      "Weryfikacja zgodności z wymaganiami regulacyjnymi",
-      "Udowodnienie, że aplikacja nie zawiera żadnych defektów",
-      "Gwarancja, że każda funkcja zadziała w każdym środowisku",
-      "Zastąpienie przeglądu wymagań testowaniem po wdrożeniu"
+      "Weryfikacja zgodności z wymaganiami regulacyjnymi.",
+      "Udowodnienie, że aplikacja nie zawiera żadnych defektów.",
+      "Gwarancja, że każda funkcja zadziała w każdym środowisku.",
+      "Zastąpienie przeglądu wymagań testowaniem po wdrożeniu."
     ],
     correct: 0,
     explanation: "Testowanie może weryfikować zgodność z wymaganiami regulacyjnymi, ale nie dowodzi braku defektów ani gwarantuje działania w każdym środowisku."
@@ -21,8 +21,8 @@ window.ISTQB_QUESTIONS = [
     id: "q02",
     chapter: 1,
     k: "K2",
-    // FL-1.1.2
-    text: "Podczas przeglądu specyfikacji tester znalazł sprzeczne kryteria. Autor poprawił dokument, lecz aplikacji nie uruchamiano. Która ocena najlepiej rozdziela testowanie od debugowania?",
+    ref: "FL-1.1.2",
+    text: "Podczas przeglądu specyfikacji tester znalazł sprzeczne kryteria. Autor poprawił dokument, lecz aplikacji nie uruchamiano. Która ocena poprawnie rozróżnia testowanie i debugowanie?",
     options: [
       "Testowanie uruchomiło aplikację i wywołało awarię, a debugowanie tylko zarejestrowało wynik.",
       "Debugowanie wykryło defekt podczas wykonania, a testowanie jedynie naprawiło dokument.",
@@ -36,7 +36,7 @@ window.ISTQB_QUESTIONS = [
     id: "q03",
     chapter: 1,
     k: "K1",
-    // FL-1.2.2
+    ref: "FL-1.2.2",
     text: "Która relacja między zapewnieniem jakości (QA) a testowaniem jest prawidłowa?",
     options: [
       "QA jest podejściem procesowym, a testowanie dostarcza informacji o jakości produktu.",
@@ -51,7 +51,7 @@ window.ISTQB_QUESTIONS = [
     id: "q04",
     chapter: 1,
     k: "K2",
-    // FL-1.2.3
+    ref: "FL-1.2.3",
     text: "Twórca błędnie zinterpretował niejasne kryterium obsługi pustego pliku i wprowadził wadliwą obsługę. Podczas eksportu aplikacja przerwała pracę. Które przypisanie pojęć jest poprawne?",
     options: [
       "Niejasne kryterium — przyczyna źródłowa; błędna interpretacja — błąd; wadliwa obsługa — defekt; przerwanie eksportu — błąd.",
@@ -66,8 +66,8 @@ window.ISTQB_QUESTIONS = [
     id: "q05",
     chapter: 1,
     k: "K2",
-    // FL-1.3.1
-    text: "Ten sam zestaw testów jest uruchamiany od wielu wydań, a mimo zmian w aplikacji ujawnia coraz mniej nowych problemów. Która decyzja najlepiej wyjaśnia ten wynik zgodnie z zasadami testowania?",
+    ref: "FL-1.3.1",
+    text: "Ten sam zestaw testów jest uruchamiany od wielu wydań, a mimo zmian w aplikacji ujawnia coraz mniej nowych problemów. Która decyzja wyjaśnia ten wynik zgodnie z zasadami testowania?",
     options: [
       "Zwiększyć częstotliwość starego zestawu bez zmiany danych, ponieważ każde powtórzenie zwiększa skuteczność.",
       "Zmienić testy lub dane zgodnie ze zmianami i ryzykami, zamiast powtarzać wyłącznie stary zestaw.",
@@ -81,7 +81,8 @@ window.ISTQB_QUESTIONS = [
     id: "q06",
     chapter: 1,
     k: "K2",
-    // FL-1.4.1, FL-1.4.3
+    ref: "FL-1.4.1",
+    // dodatkowo: FL-1.4.3
     text: "Zespół ma już priorytetyzowane warunki testowe, ale brakuje mu przypadków, danych i środowiska. Który opis poprawnie przyporządkowuje te czynności i produkty testowe (testware)?",
     options: [
       "Analiza: warunki testowe; projektowanie: przypadki oraz wymagania dotyczące danych i środowiska; implementacja: procedury, skrypty, dane i gotowe elementy środowiska; wykonanie: uruchomienie i wyniki.",
@@ -96,8 +97,10 @@ window.ISTQB_QUESTIONS = [
     id: "q07",
     chapter: 1,
     k: "K2",
-    // FL-1.4.4, FL-1.4.5
-    text: "Na koniec iteracji menedżer testów prosi o raport. Wymaganie R-7 ma dwa przypadki: jeden zakończył się awarią i defektem, drugi nie został wykonany. Która decyzja najlepiej wykorzystuje śledzenie pochodzenia i rolę zarządzania testami?",
+    ref: "FL-1.4.4",
+    // dodatkowo: FL-1.4.5
+    scenario: "Na koniec iteracji menedżer testów prosi o raport. Wymaganie R-7 ma dwa przypadki: jeden zakończył się awarią i zgłoszonym defektem, drugi nie został wykonany.",
+    text: "Która decyzja wykorzystuje śledzenie pochodzenia i rolę zarządzania testami?",
     options: [
       "Zespół zachowuje tylko powiązanie przypadku z wynikiem, a menedżer ocenia pokrycie na podstawie liczby testów.",
       "Menedżer łączy wymagania z raportami defektów, ale nie z testami, aby zachować prosty format raportu.",
@@ -111,8 +114,8 @@ window.ISTQB_QUESTIONS = [
     id: "q08",
     chapter: 1,
     k: "K2",
-    // FL-1.5.3
-    text: "Przy rozwijaniu systemu bezpieczeństwa autorzy znają kontekst, a niezależny tester zgłasza problemy bez stałej współpracy. Która decyzja najlepiej wykorzystuje niezależność i podejście całego zespołu?",
+    ref: "FL-1.5.3",
+    text: "Przy rozwijaniu systemu bezpieczeństwa autorzy znają kontekst, a niezależny tester zgłasza problemy bez stałej współpracy. Jak połączyć niezależność testera z podejściem całego zespołu?",
     options: [
       "Skoncentrować wszystkie testy przy testerze zewnętrznym, uznając, że tylko pełna separacja zapewnia obiektywność.",
       "Pozostawić testowanie wyłącznie autorom, uznając, że znajomość kontekstu rekompensuje brak niezależności.",
@@ -130,7 +133,7 @@ window.ISTQB_QUESTIONS = [
     id: "q09",
     chapter: 2,
     k: "K1",
-    // FL-2.1.2
+    ref: "FL-2.1.2",
     text: "Która zasada jest dobrą praktyką testowania niezależnie od modelu SDLC?",
     options: [
       "Dla każdej aktywności rozwojowej przewidzieć odpowiednią aktywność testową.",
@@ -145,7 +148,7 @@ window.ISTQB_QUESTIONS = [
     id: "q10",
     chapter: 2,
     k: "K1",
-    // FL-2.1.3
+    ref: "FL-2.1.3",
     text: "Które podejścia należą do test-first, czyli definiują test przed kodem?",
     options: [
       "Poziomy komponentowy, integracyjny i systemowy, które opisują obiekt testowania.",
@@ -160,8 +163,9 @@ window.ISTQB_QUESTIONS = [
     id: "q11",
     chapter: 2,
     k: "K2",
-    // FL-2.1.1, FL-2.1.6
-    text: "W projekcie dostarczanym w krótkich iteracjach retrospektywa wykazała, że regresje wykrywano zbyt późno. Który wniosek najlepiej wyjaśnia wpływ SDLC i wykorzystanie retrospektywy?",
+    ref: "FL-2.1.1",
+    // dodatkowo: FL-2.1.6
+    text: "W projekcie dostarczanym w krótkich iteracjach retrospektywa wykazała, że regresje wykrywano zbyt późno. Który wniosek opisuje wpływ modelu SDLC na testowanie oraz wykorzystanie retrospektywy?",
     options: [
       "Testy dynamiczne należy odroczyć do końca projektu, a uwagi z retrospektywy można zapisać po zakończeniu prac.",
       "Retrospektywa powinna oceniać wyłącznie indywidualną pracę testerów, a wczesne testy całkowicie zastąpią regresję.",
@@ -175,8 +179,9 @@ window.ISTQB_QUESTIONS = [
     id: "q12",
     chapter: 2,
     k: "K2",
-    // FL-2.1.4, FL-2.1.5
-    text: "Każdy commit uruchamia w CI analizę statyczną, testy komponentów i zestaw regresyjny; raz w tygodniu testerzy wykonują też scenariusze manualne w środowisku podobnym do produkcyjnego. Który wniosek najlepiej opisuje wpływ DevOps i shift left?",
+    ref: "FL-2.1.4",
+    // dodatkowo: FL-2.1.5
+    text: "Każdy commit uruchamia w CI analizę statyczną, testy komponentów i zestaw regresyjny; raz w tygodniu testerzy wykonują też scenariusze manualne w środowisku podobnym do produkcyjnego. Który wniosek opisuje wpływ DevOps i shift left?",
     options: [
       "CI/CD eliminuje potrzebę testów manualnych, a shift left oznacza przeniesienie wszystkich testów na koniec potoku.",
       "Analiza statyczna zastępuje testy komponentów, natomiast testy regresyjne powinny działać wyłącznie w środowisku produkcyjnym.",
@@ -190,7 +195,8 @@ window.ISTQB_QUESTIONS = [
     id: "q13",
     chapter: 2,
     k: "K2",
-    // FL-2.2.1, FL-2.2.2
+    ref: "FL-2.2.1",
+    // dodatkowo: FL-2.2.2
     text: "Zespół planuje test całego systemu, który sprawdza przepływ użytkownika, oraz test wydajnościowy pod obciążeniem. Które przypisanie poziomu i typu testu jest poprawne?",
     options: [
       "Test całego systemu należy do poziomu komponentowego, a test wydajnościowy jest typem czysto funkcjonalnym.",
@@ -205,8 +211,10 @@ window.ISTQB_QUESTIONS = [
     id: "q14",
     chapter: 2,
     k: "K2",
-    // FL-2.2.3, FL-2.3.1
-    text: "Na utrzymywanym systemie rezerwacji naprawiono błąd, przez który potwierdzenie e-mail miało błędny adres. Po poprawce wykonano test odtwarzający zgłoszony problem oraz testy innych funkcji powiadamiania, których nie zmieniano. Która ocena najlepiej opisuje te działania i zakres testowania konserwacyjnego?",
+    ref: "FL-2.2.3",
+    // dodatkowo: FL-2.3.1
+    scenario: "Na utrzymywanym systemie rezerwacji naprawiono błąd, przez który potwierdzenie e-mail miało błędny adres. Po poprawce wykonano test odtwarzający zgłoszony problem oraz testy innych funkcji powiadamiania, których nie zmieniano.",
+    text: "Która ocena poprawnie opisuje te działania i zakres testowania konserwacyjnego?",
     options: [
       "Test odtwarzający sprawdza wyłącznie brak regresji, a pozostałe testy potwierdzają naprawę.",
       "Test odtwarzający potwierdza naprawę, a testy innych funkcji są regresyjne; ich zakres warto oprzeć na analizie wpływu i ryzyku.",
@@ -224,8 +232,9 @@ window.ISTQB_QUESTIONS = [
     id: "q15",
     chapter: 3,
     k: "K2",
-    // FL-3.1.2, FL-3.1.3
-    text: "Zespół przegląda dokumentację wymagań oraz kod, nie uruchamiając aplikacji. Które porównanie najlepiej opisuje zakres i wartość obu podejść testowych?",
+    ref: "FL-3.1.2",
+    // dodatkowo: FL-3.1.3
+    text: "Zespół przegląda dokumentację wymagań oraz kod, nie uruchamiając aplikacji. Które porównanie poprawnie opisuje zakres i wartość obie podejść testowych?",
     options: [
       "Statyczne obejmuje te produkty pracy i może wykryć nieosiągalny kod bez wykonania aplikacji, zwykle ograniczając koszt późniejszych napraw.",
       "Statyczne wymaga uruchomienia aplikacji i wykrywa wyłącznie awarie, natomiast dynamiczne nie pozwala badać dokumentów ani kodu.",
@@ -239,8 +248,9 @@ window.ISTQB_QUESTIONS = [
     id: "q16",
     chapter: 3,
     k: "K2",
-    // FL-3.2.2, FL-3.2.4
-    text: "Krytyczny model danych wymaga przeglądu o wysokiej formalności, z możliwością śledzenia decyzji i napraw. Który wariant najlepiej odpowiada właściwemu typowi przeglądu i jego procesowi?",
+    ref: "FL-3.2.2",
+    // dodatkowo: FL-3.2.4
+    text: "Krytyczny model danych wymaga przeglądu o wysokiej formalności, z możliwością śledzenia decyzji i napraw. Który wariant spełnia wymagania formalności przeglądu i jego procesu?",
     options: [
       "Przeprowadzić przegląd spacerowy prowadzony przez autora, aby zbudować zaufanie bez analizy jakości modelu.",
       "Przeprowadzić inspekcję po zaplanowaniu kryteriów wyjścia i czasu na przygotowanie, wykonaniu indywidualnych przeglądów, analizie anomalii oraz udokumentowaniu napraw.",
@@ -254,8 +264,8 @@ window.ISTQB_QUESTIONS = [
     id: "q17",
     chapter: 3,
     k: "K1",
-    // FL-3.2.3
-    text: "Która osoba odpowiada za dobór uczestników oraz zorganizowanie czasu i miejsca przeglądu?",
+    ref: "FL-3.2.3",
+    text: "Która osoba odpowiada za zaproszenie uczestników oraz ustalenie terminu i miejsca przeglądu?",
     options: [
       "Autor produktu, który przygotowuje go do przeglądu i następnie usuwa zgłoszone defekty.",
       "Protokolant, który porządkuje anomalie oraz zapisuje decyzje podczas spotkania.",
@@ -269,7 +279,7 @@ window.ISTQB_QUESTIONS = [
     id: "q18",
     chapter: 3,
     k: "K1",
-    // FL-3.2.1
+    ref: "FL-3.2.1",
     text: "Zespół odkłada zbieranie wymagań i opinii interesariuszy do końca projektu. Która konsekwencja takiego podejścia jest najbardziej prawdopodobna?",
     options: [
       "Zespół może uniknąć kosztownego nadrobienia prac, jeśli uwagi interesariuszy trafią do planu po ich zebraniu.",
@@ -288,7 +298,7 @@ window.ISTQB_QUESTIONS = [
     id: "q19",
     chapter: 4,
     k: "K2",
-    // FL-4.1.1
+    ref: "FL-4.1.1",
     text: "Który zestaw poprawnie przyporządkowuje przykłady do technik czarnych, białych i opartych na doświadczeniu?",
     options: [
       "Partycjonowanie równoważności i BVA; testowanie gałęzi; testowanie eksploracyjne.",
@@ -303,7 +313,8 @@ window.ISTQB_QUESTIONS = [
     id: "q20",
     chapter: 4,
     k: "K2",
-    // FL-4.3.1, FL-4.3.2
+    ref: "FL-4.3.1",
+    // dodatkowo: FL-4.3.2
     text: "Kod zawiera warunek: jeśli wiek wynosi co najmniej 18 lat, ustawia status na „pełnoletni”, a po nim ustawia go bezwarunkowo na „obsłużony”. Testy wykonały obie instrukcje dla osoby w wieku 20 lat. Osiągnięto 100% pokrycia instrukcji. Która ocena jest poprawna?",
     options: [
       "Wszystkie wyniki warunku zostały sprawdzone, ponieważ wykonano oba przypisania.",
@@ -318,8 +329,8 @@ window.ISTQB_QUESTIONS = [
     id: "q21",
     chapter: 4,
     k: "K2",
-    // FL-4.3.3
-    text: "Specyfikacja nie opisuje sposobu naliczania rabatu, ale tester ma dostęp do kodu i grafu przepływu sterowania. Które stwierdzenie najlepiej opisuje wartość i ograniczenie testowania białego?",
+    ref: "FL-4.3.3",
+    text: "Specyfikacja nie opisuje sposobu naliczania rabatu, ale tester ma dostęp do kodu i grafu przepływu sterowania. Które stwierdzenie opisuje wartość i ograniczenie testowania białego?",
     options: [
       "Umożliwia ocenę zaimplementowanej struktury i pokrycia kodu, ale może nie wykryć brakującego wymagania.",
       "Pozwala wykryć każde brakujące wymaganie, nawet jeśli nie ma go w strukturze kodu.",
@@ -333,7 +344,7 @@ window.ISTQB_QUESTIONS = [
     id: "q22",
     chapter: 4,
     k: "K2",
-    // FL-4.4.1
+    ref: "FL-4.4.1",
     text: "Na podstawie historii awarii podobnej usługi tester tworzy listę możliwych przyczyn: brak walidacji pustego pola, pomylony operator porównania i niezgodne typy danych. Następnie projektuje testy mające ujawnić te problemy. Która technika jest stosowana?",
     options: [
       "Testowanie eksploracyjne, ponieważ przypadki powstają dopiero podczas wykonywania testów.",
@@ -348,8 +359,9 @@ window.ISTQB_QUESTIONS = [
     id: "q23",
     chapter: 4,
     k: "K2",
-    // FL-4.4.2, FL-4.4.3
-    text: "Zespół prowadzi 45-minutową sesję na podstawie charteru, a tester jednocześnie projektuje, wykonuje i ocenia testy. Po sesji osobna checklista zawiera konkretne, niezależnie sprawdzalne pytania, które zespół aktualizuje po analizie nowych defektów. Który opis obu technik jest poprawny?",
+    ref: "FL-4.4.2",
+    // dodatkowo: FL-4.4.3
+    text: "Zespół prowadzi 45-minutową sesję na podstawie charteru, a tester jednocześnie projektuje, wykonuje i ocenia testy. Po sesji osobna checklista zawiera konkretne, niezależnie sprawdzalne pytania, które zespół aktualizuje po analizie nowych defektów. Który opis obie technik jest poprawny?",
     options: [
       "Eksploracja wymaga wcześniejszego zapisu każdego kroku, a checklisty powinny zawierać wyłącznie kryteria wejścia.",
       "Eksploracja pozwala uczyć się produktu podczas testowania, a checklista wspiera powtarzalne sprawdzanie konkretnych warunków.",
@@ -363,8 +375,9 @@ window.ISTQB_QUESTIONS = [
     id: "q24",
     chapter: 4,
     k: "K2",
-    // FL-4.5.1, FL-4.5.2
-    text: "Podczas wspólnego doprecyzowania historyjka użytkownika opisuje rolę, cel i wartość biznesową. Zespół omawia sposób użycia oraz przyjmuje kryterium w formacie Given/When/Then obejmujące zachowanie pozytywne i ujemne. Która ocena odpowiada modelowi 3C i opcjom kryteriów akceptacji?",
+    ref: "FL-4.5.1",
+    // dodatkowo: FL-4.5.2
+    text: "Podczas wspólnego doprecyzowania historyjka użytkownika opisuje rolę, cel i wartość biznesową. Zespół omawia sposób użycia oraz przyjmuje kryterium w formacie Given/When/Then obejmujące zachowanie pozytywne i ujemne. Która ocena odpowiada modelowi 3C i formatom kryteriów akceptacji?",
     options: [
       "Karta opisuje historyjkę, rozmowa — sposób użycia, a potwierdzenie — kryteria akceptacji; Given/When/Then ma format scenariuszowy.",
       "Karta opisuje sposób użycia, rozmowa — kryteria, a potwierdzenie — wartość biznesową; Given/When/Then jest listą kontrolną.",
@@ -378,8 +391,9 @@ window.ISTQB_QUESTIONS = [
     id: "q25",
     chapter: 4,
     k: "K3",
-    // FL-4.2.1
-    text: "Specyfikacja importu zamówienia wymaga kraju należącego do zbioru {PL, CZ, DE} oraz liczby sztuk od 1 do 10. Zamówienie jest przyjmowane tylko wtedy, gdy oba warunki są poprawne; nieprawidłowy kraj lub liczba powodują odrzucenie. Przy kryterium pokrycia każda partycja musi zostać wykonana co najmniej raz. Który minimalny zestaw przypadków pokrywa wszystkie partycje?",
+    ref: "FL-4.2.1",
+    scenario: "Specyfikacja importu zamówienia wymaga kraju należącego do zbioru {PL, CZ, DE} oraz liczby sztuk od 1 do 10. Zamówienie jest przyjmowane tylko wtedy, gdy oba warunki są poprawne; nieprawidłowy kraj lub liczba powodają odrzucenie.",
+    text: "Przy kryterium pokrycia każda partycja musi zostać wykonana co najmniej raz. Który minimalny zestaw danych testowych pokrywa wszystkie partycje?",
     options: [
       "Kraj=PL, liczba=5 — przyjęte; kraj=CZ, liczba=10 — przyjęte.",
       "Kraj=XX, liczba=0 — odrzucone; kraj=YY, liczba=20 — odrzucone.",
@@ -393,8 +407,8 @@ window.ISTQB_QUESTIONS = [
     id: "q26",
     chapter: 4,
     k: "K3",
-    // FL-4.2.2
-    text: "Przesyłka jest przyjmowana bezpłatnie dla masy od 1 kg do 15 kg włącznie; wartości poniżej 1 kg lub powyżej 15 kg są odrzucane. Który zestaw danych zapewnia 100% pokrycie wersji trójwartościowej BVA dla obu granic?",
+    ref: "FL-4.2.2",
+    text: "Przesyłka o masie od 1 kg do 15 kg włącznie jest bezpłatna; masy poniżej 1 kg lub powyżej 15 kg są odrzucane. Który zestaw danych zapewnia 100% pokrycie wersji trójwartościowej BVA dla obie granic?",
     options: [
       "0, 1, 15, 16",
       "1, 2, 14, 15",
@@ -408,8 +422,9 @@ window.ISTQB_QUESTIONS = [
     id: "q27",
     chapter: 4,
     k: "K3",
-    // FL-4.2.3
-    text: "Tablica decyzyjna zawiera warunki P — subskrypcja jest aktywna oraz R — umowa trwa co najmniej 12 miesięcy. Pełna tabela przypisuje rabaty odpowiednio 20%, 10%, 5% i 0% dla kombinacji TT, TF, FT i FF; wszystkie kombinacje są wykonalne. Który zestaw danych testowych wykonuje każdą wykonalną kolumnę decyzji dokładnie raz?",
+    ref: "FL-4.2.3",
+    scenario: "Tablica decyzyjna zawiera warunki P — subskrypcja jest aktywna oraz R — umowa trwa co najmniej 12 miesięcy. Pełna tabela przypisuje rabaty odpowiednio 20%, 10%, 5% i 0% dla kombinacji TT, TF, FT i FF; wszystkie kombinacje są wykonalne.",
+    text: "Który zestaw danych testowych wykonuje każdą wykonalną kolumnę decyzji dokładnie raz?",
     options: [
       "Aktywna/12 → 20%; aktywna/3 → 10%; aktywna/3 → 10%; nieaktywna/24 → 5%.",
       "Aktywna/12 → 20%; aktywna/3 → 10%; nieaktywna/24 → 5%; nieaktywna/3 → 0%.",
@@ -423,7 +438,7 @@ window.ISTQB_QUESTIONS = [
     id: "q28",
     chapter: 4,
     k: "K3",
-    // FL-4.2.4
+    ref: "FL-4.2.4",
     text: "Model obsługi zamówienia zawiera stany Nowe, Opłacone, Zwrócone i Anulowane. Poprawne przejścia to: Nowe — opłać → Opłacone; Nowe — anuluj → Anulowane; Opłacone — zwróć → Zwrócone. Niedozwolone są: Nowe — zwróć → Nowe oraz Opłacone — anuluj → Opłacone. Który zestaw sesji pokrywa wszystkie przejścia, jeśli każde przejście niedozwolone ma zostać podjęte w osobnej sesji?",
     options: [
       "T1: Nowe — zwróć → Nowe — opłać → Opłacone — anuluj → Opłacone — zwróć → Zwrócone; T2: Nowe — anuluj → Anulowane.",
@@ -438,8 +453,8 @@ window.ISTQB_QUESTIONS = [
     id: "q29",
     chapter: 4,
     k: "K3",
-    // FL-4.5.3
-    text: "Na warsztacie przyjęto historyjkę dotyczącą anulowania wizyty co najmniej 2 godziny przed jej rozpoczęciem. Kryteria wymagają: własna wizyta Zaplanowana → anulowana z potwierdzeniem; zbyt późne odwołanie własnej wizyty oraz odwołanie cudzej wizyty → odrzucenie bez zmiany statusu. Który przebieg najlepiej realizuje ATDD, jeśli funkcja nie została jeszcze zaimplementowana?",
+    ref: "FL-4.5.3",
+    text: "Na warsztacie przyjęto historyjkę dotyczącą anulowania wizyty co najmniej 2 godziny przed jej rozpoczęciem. Kryteria wymagają: własna wizyta Zaplanowana → anulowana z potwierdzeniem; zbyt późne odwołanie własnej wizyty oraz odwołanie cudzej wizyty → odrzucenie bez zmiany statusu. Który przebieg realizuje ATDD, jeśli funkcja nie została jeszcze zaimplementowana?",
     options: [
       "Po implementacji opracować i wykonać test pozytywny oraz oba przypadki ujemne.",
       "Przed implementacją opracować oba przypadki ujemne, bez testu pozytywnego.",
@@ -457,8 +472,8 @@ window.ISTQB_QUESTIONS = [
     id: "q30",
     chapter: 5,
     k: "K1",
-    // FL-5.1.6
-    text: "Który zestaw testów powinien znajdować się u dołu klasycznej piramidy testów?",
+    ref: "FL-5.1.6",
+    text: "Który zestaw testów powinien znajdować się w podstawie klasycznej piramidy testów?",
     options: [
       "Małe, izolowane i szybkie testy obejmujące niewielkie fragmenty funkcji.",
       "Rozległe testy całego systemu, wykonywane często mimo dużego kosztu i zależności.",
@@ -472,8 +487,9 @@ window.ISTQB_QUESTIONS = [
     id: "q31",
     chapter: 5,
     k: "K2",
-    // FL-5.1.1, FL-5.1.2
-    text: "Podczas planowania iteracji zespół doprecyzowuje historyjkę, analizuje ryzyka i szacuje zadania testowe. Jakie działanie testera najlepiej rozwija planowanie i plan testów?",
+    ref: "FL-5.1.1",
+    // dodatkowo: FL-5.1.2
+    text: "Podczas planowania iteracji zespół doprecyzowuje historyjkę, analizuje ryzyka i szacuje zadania testowe. Które działanie testera wpływa na jakość planu testów?",
     options: [
       "Rozpocząć testy dopiero po rozwinięciu, uznając wszystkie wcześniejsze decyzje za testowe.",
       "Przekazać historyjkę testerom po akceptacji i pominąć szacowanie oraz planowanie testów.",
@@ -487,8 +503,8 @@ window.ISTQB_QUESTIONS = [
     id: "q32",
     chapter: 5,
     k: "K2",
-    // FL-5.1.3
-    text: "Przed rozpoczęciem testów integracyjnych brakuje wersjonowanych przypadków i danych, a środowisko będzie gotowe dopiero za dwa dni. Która decyzja jest zgodna z definicją kryteriów?",
+    ref: "FL-5.1.3",
+    text: "Przed rozpoczęciem testów integracyjnych brakuje wersjonowanych przypadków i danych, a środowisko będzie gotowe dopiero za dwa dni. Która decyzja jest zgodna z definicją kryteriów wejścia i wyjścia?",
     options: [
       "Rozpocząć testy mimo braków, ponieważ kryteria wejścia opisują oczekiwany wynik testów.",
       "Odroczyć testy do spełnienia kryteriów wejścia, a kryteria wyjścia oceniać po ich wykonaniu.",
@@ -502,7 +518,8 @@ window.ISTQB_QUESTIONS = [
     id: "q33",
     chapter: 5,
     k: "K2",
-    // FL-5.2.2, FL-5.2.4
+    ref: "FL-5.2.2",
+    // dodatkowo: FL-5.2.4
     text: "Analiza wykazała dwa ryzyka: dostawca opóźni emulator, a w emulatorze błędnie wyliczany jest podatek. Które postępowanie właściwie je rozróżnia i kontroluje?",
     options: [
       "Zaklasyfikować oba ryzyka jako produktowe, ponieważ tester bada jakość emulatora i dostawcę.",
@@ -517,7 +534,8 @@ window.ISTQB_QUESTIONS = [
     id: "q34",
     chapter: 5,
     k: "K2",
-    // FL-5.3.2, FL-5.3.3
+    ref: "FL-5.3.2",
+    // dodatkowo: FL-5.3.3
     text: "W trzecim tygodniu opóźnienie środowiska zwiększyło ryzyko, a do ukończenia testów potrzebna jest dodatkowa osoba. Które działanie realizuje monitorowanie, sterowanie i komunikowanie?",
     options: [
       "Opublikować dla zespołu codzienny plan bez metryk, przeszkód i zmian ryzyka.",
@@ -532,7 +550,7 @@ window.ISTQB_QUESTIONS = [
     id: "q35",
     chapter: 5,
     k: "K2",
-    // FL-5.4.1
+    ref: "FL-5.4.1",
     text: "Zatwierdzona linia bazowa środowiska obejmuje aplikację 4.2, schemat bazy 17, dane R3 i skrypt S7. Która praktyka umożliwi odtworzenie poprzedniego wyniku?",
     options: [
       "Umożliwić dowolne nadpisanie plików, ponieważ środowisko testowe ma charakter tymczasowy.",
@@ -547,7 +565,7 @@ window.ISTQB_QUESTIONS = [
     id: "q36",
     chapter: 5,
     k: "K3",
-    // FL-5.1.4
+    ref: "FL-5.1.4",
     text: "Dla zadania testowego przyjęto estymaty w osobogodzinach: a=8, m=14, b=26. Jakie są wartości E i SD według trzypunktowej estymacji?",
     options: [
       "E = 11 godzin, SD = 2 godziny",
@@ -562,8 +580,9 @@ window.ISTQB_QUESTIONS = [
     id: "q37",
     chapter: 5,
     k: "K3",
-    // FL-5.1.5
-    text: "Testy rozpoczynają się o 13:00. TC-C o niskim priorytecie trwa 30 minut i przygotowuje dane dla TC-A o priorytecie krytycznym oraz TC-B o priorytecie wysokim. TC-B trwa 20 minut i musi zakończyć się do 14:00. TC-D o priorytecie wysokim można wykonać wyłącznie w oknie 14:00–14:20. TC-A trwa 40 minut. Który harmonogram spełnia wszystkie warunki?",
+    ref: "FL-5.1.5",
+    scenario: "Jeden tester wykonuje przypadki testowe pojedynczo, na jednej stacji roboczej. Testy rozpoczynają się o 13:00. TC-C o niskim priorytecie trwa 30 minut i przygotowuje dane dla TC-A o priorytecie krytycznym oraz TC-B o priorytecie wysokim. TC-B trwa 20 minut i musi zakończyć się przed 14:00. TC-D o priorytecie wysokim można wykonać wyłącznie w oknie 14:00–14:20. TC-A trwa 40 minut.",
+    text: "Który harmonogram spełnia wszystkie warunki?",
     options: [
       "A 13:00 → C 13:30 → B 13:30 → D 14:00 → A 14:20",
       "C 13:00 → A 13:30 → B 14:10 → D 14:30",
@@ -571,16 +590,16 @@ window.ISTQB_QUESTIONS = [
       "C 13:00 → B 13:30 → D 14:00 → A 14:20"
     ],
     correct: 3,
-    explanation: "TC-C musi rozpocząć się pierwsze, ponieważ przygotowuje wymagane dane. Następnie TC-B kończy się do 14:00, TC-D wykorzystuje jedyne dostępne okno środowiskowe, a po nim wykonywany jest TC-A."
+    explanation: "TC-C musi rozpocząć się pierwsze, ponieważ przygotowuje wymagane dane. Następnie TC-B kończy się przed 14:00, TC-D wykorzystuje jedyne dostępne okno środowiskowe, a po nim wykonywany jest TC-A. Priorytet nie oznacza automatycznie pierwszego terminu — najpierw decydują zależności i twarde terminy."
   },
   {
     id: "q38",
     chapter: 5,
     k: "K3",
-    // FL-5.5.1
+    ref: "FL-5.5.1",
     text: "Podczas wykonania przypadku TC-218 na aplikacji Rezerwacje 3.4 w środowisku testowym wysłano dwie nakładające się rezerwacje tego samego zasobu. Druga została zapisana. Który zestaw danych powinien znaleźć się w raporcie defektu?",
     options: [
-      "Identyfikator, tytuł, autor, data, wersja 3.4, środowisko, TC-218, dane, kroki, oczekiwany HTTP 409, rzeczywisty 201, log, zrzut, krytyczność (severity), priorytet naprawy i status.",
+      "Identyfikator, tytuł, autor, data, wersja 3.4, środowisko, TC-218, dane, kroki, oczekiwany kod HTTP 409, rzeczywisty kod 201, log, zrzut, krytyczność (severity), priorytet naprawy i status.",
       "Tytuł, autor, data, wersja, środowisko i ogólny opis; kody 409/201, ale bez kroków, danych, załączników i referencji.",
       "Kroki, dane TC-218, log i zrzut, ale bez identyfikatora, środowiska, wersji, wyników oraz klasyfikacji defektu.",
       "Autor, data, priorytet naprawy i wniosek o poprawę wydajności API, ale bez środowiska, kroków, danych oraz wyników scenariusza."
@@ -596,8 +615,8 @@ window.ISTQB_QUESTIONS = [
     id: "q39",
     chapter: 6,
     k: "K1",
-    // FL-6.2.1
-    text: "Zespół automatyzuje regresję, ale nie uwzględnił kosztów utrzymania skryptów. Który wniosek najlepiej wskazuje zagrożenie wynikające z pominięcia tych kosztów?",
+    ref: "FL-6.2.1",
+    text: "Zespół automatyzuje regresję, ale nie uwzględnił kosztów utrzymania skryptów. Który wniosek wskazuje zagrożenie wynikające z pominięcia tych kosztów?",
     options: [
       "Niedoszacowanie utrzymania może ograniczyć osiągane korzyści.",
       "Automatyzacja automatycznie usuwa potrzebę testowania manualnego.",
@@ -611,8 +630,8 @@ window.ISTQB_QUESTIONS = [
     id: "q40",
     chapter: 6,
     k: "K2",
-    // FL-6.1.1
-    text: "Narzędzie uruchamia testy po każdej kompilacji, rejestruje ich wyniki i oblicza pokrycie kodu. Który zestaw funkcji wskazuje na jego kategorię?",
+    ref: "FL-6.1.1",
+    text: "Narzędzie uruchamia testy po każdej kompilacji, rejestruje ich wyniki i oblicza pokrycie kodu. Do której kategorii narzędzi testowych należy?",
     options: [
       "Narzędzia do zarządzania testami.",
       "Narzędzia uruchamiające testy oraz mierzące pokrycie.",

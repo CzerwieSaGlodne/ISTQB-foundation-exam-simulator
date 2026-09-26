@@ -85,17 +85,6 @@
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
   }
 
-  .duration-options {
-    border-color: var(--border);
-    background: var(--ink-50);
-  }
-
-  .duration-option:has(input:checked) {
-    border-color: rgba(141, 163, 255, 0.45);
-    background: var(--surface-raised);
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.22);
-  }
-
   .hero-visual::before {
     background: linear-gradient(145deg, rgba(74, 105, 255, 0.18), rgba(24, 183, 200, 0.1));
   }

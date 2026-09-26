@@ -9,10 +9,11 @@
     PASS_SCORE: 26,
     EXCELLENT_SCORE: 34,
     TOTAL_QUESTIONS: 40,
+    PASS_PERCENT: 65,
     LETTERS: Object.freeze(["A", "B", "C", "D"]),
+    BASE_DURATION_MINUTES: 60,
     DURATIONS: Object.freeze({
       60: 3600,
-      75: 4500,
     }),
     CHAPTER_COUNTS: Object.freeze({
       1: 8,
@@ -35,13 +36,13 @@
       }),
       3: Object.freeze({
         title: "Testowanie statyczne",
-        shortTitle: "Testowanie statyczne",
+        shortTitle: "Statyczne",
         description: "Przeglądy i wykrywanie defektów bez uruchamiania",
       }),
       4: Object.freeze({
         title: "Analiza i projektowanie testów",
-        shortTitle: "Techniki testowe",
-        description: "Black-box, white-box i podejścia eksperckie",
+        shortTitle: "Projektowanie testów",
+        description: "Black-box, white-box, eksperckie i oparte na współpracy",
       }),
       5: Object.freeze({
         title: "Zarządzanie aktywnościami testowymi",

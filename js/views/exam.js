@@ -63,7 +63,9 @@
     const { dom } = app;
 
     dom.questionLabel.textContent = `PYTANIE ${String(position).padStart(2, "0")}`;
-    dom.questionType.textContent = `Pytanie ${question.k} · Wybierz jedną odpowiedź`;
+    dom.questionType.textContent = question.ref
+      ? `${question.ref} · Poziom ${question.k} · jedna odpowiedź`
+      : `Poziom ${question.k} · jedna odpowiedź`;
     dom.questionText.textContent = question.text;
 
     if (question.scenario) {
@@ -92,7 +94,7 @@
 
     dom.previousButton.disabled = position === 1;
     dom.nextButton.innerHTML = position === app.config.TOTAL_QUESTIONS
-      ? `Podsumowanie <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 10 4 4 10-10" /></svg>`
+      ? `Zakończ test <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m3 10 4 4 10-10" /></svg>`
       : `Dalej <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 6 6-6 6" /></svg>`;
 
     dom.questionCounter.textContent = `${position} z ${app.config.TOTAL_QUESTIONS}`;
@@ -194,7 +196,7 @@
     const remaining = namespace.state.getRemainingSeconds(app);
 
     app.dom.finishSummary.innerHTML = `
-      <div><strong>${answered}</strong><span>odpowiedzi</span></div>
+      <div><strong>${answered}</strong><span>${namespace.utils.pluralizeAnswers(answered)}</span></div>
       <div><strong>${unanswered}</strong><span>bez odpowiedzi</span></div>
       <div><strong>${namespace.utils.formatTime(remaining)}</strong><span>pozostało</span></div>`;
     app.dom.finishDialogText.textContent = unanswered > 0

@@ -42,19 +42,22 @@
     dom.scoreRing.style.setProperty("--score", percent);
     dom.scoreRing.style.setProperty("--ring-color", passed ? "#21c293" : "#ee9d26");
     dom.timeSpent.textContent = namespace.utils.formatTime(analysis.elapsedSeconds);
+    dom.timeSpentLabel.textContent = app.state.finishedReason === "time"
+      ? "Czas pracy (limit czasu)"
+      : "Czas pracy";
     dom.correctCount.textContent = analysis.correct;
     dom.incorrectCount.textContent = analysis.incorrect;
     dom.unansweredCount.textContent = analysis.unanswered;
 
     if (passed) {
       dom.resultsTitle.textContent = analysis.correct >= app.config.EXCELLENT_SCORE
-        ? "Świetny wynik — jest na co!"
-        : "Test zaliczony — świetna robota!";
-      dom.resultMessage.textContent = `Uzyskałeś ${analysis.correct} z ${app.config.TOTAL_QUESTIONS} punktów. Wynik spełnia próg zaliczenia. Przejrzyj analizę, aby utrwalić wiedzę.`;
+        ? "Bardzo dobry wynik"
+        : "Wynik powyżej progu zaliczenia";
+      dom.resultMessage.textContent = `Uzyskałeś ${analysis.correct} z ${app.config.TOTAL_QUESTIONS} punktów, czyli ${percent}% przy progu ${app.config.PASS_PERCENT}%. Przejrzyj analizę obszarów i wyjaśnienia, żeby utrwalić wiedzę.`;
     } else {
       const missing = app.config.PASS_SCORE - analysis.correct;
       dom.resultsTitle.textContent = `Jeszcze ${missing} ${namespace.utils.pluralizePoints(missing)} do zaliczenia`;
-      dom.resultMessage.textContent = "Przeanalizuj błędne odpowiedzi i skup się na najsłabszych obszarach. Każde kolejne podejście będzie lepsze.";
+      dom.resultMessage.textContent = `Uzyskałeś ${analysis.correct} z ${app.config.TOTAL_QUESTIONS} punktów, czyli ${percent}% przy progu ${app.config.PASS_PERCENT}%. Przeanalizuj błędne odpowiedzi i skup się na najsłabszych obszarach.`;
     }
 
     renderDomainResults(app, analysis);
@@ -73,7 +76,7 @@
         <div class="domain-item domain-item--${level}">
           <div class="domain-item__label" title="${namespace.utils.escapeHtml(domain.title)}">
             <strong>${namespace.utils.escapeHtml(domain.shortTitle)}</strong>
-            <small>${domain.correct} / ${domain.total} poprawnych</small>
+            <small>${domain.correct} poprawne z ${domain.total}</small>
           </div>
           <div class="domain-bar" aria-label="${namespace.utils.escapeHtml(domain.title)}: ${domain.percent}%">
             <span style="width: ${domain.percent}%"></span>
@@ -88,22 +91,23 @@
     const strongest = sorted[0];
     const weakest = sorted[sorted.length - 1];
     const passMessage = passed
-      ? `Najlepiej opanowany obszar to <strong>${namespace.utils.escapeHtml(strongest.title.toLowerCase())}</strong> — ${strongest.correct}/${strongest.total} poprawnych.`
-      : `Największa luka wiedzy dotyczy obszaru <strong>${namespace.utils.escapeHtml(weakest.title.toLowerCase())}</strong> — poprawnie ${weakest.correct}/${weakest.total}.`;
+      ? `Najlepiej opanowany obszar to <strong>${namespace.utils.escapeHtml(strongest.title)}</strong> — ${strongest.correct} poprawnych z ${strongest.total}.`
+      : `Największa luka wiedzy dotyczy obszaru <strong>${namespace.utils.escapeHtml(weakest.title)}</strong> — poprawnie ${weakest.correct} z ${weakest.total}.`;
 
     app.dom.insightBox.innerHTML = `
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a7 7 0 0 0-4 12.7V19h8v-3.3A7 7 0 0 0 12 3ZM9 22h6" /></svg>
-      <p>${passMessage} ${passed ? "Teraz warto utrwalić dobre wyniki i poprawić najsłabszy temat." : "Skoncentruj powtórkę na dwóch najsłabszych obszarach poniżej."}</p>`;
+      <p>${passMessage} ${passed ? "Teraz warto utrwalić dobre wyniki i poprawić najsłabszy obszar." : "Skoncentruj powtórkę na dwóch najsłabszych obszarach poniżej."}</p>`;
 
     const focusDomains = sorted.slice(-2).reverse();
+    const missing = app.config.PASS_SCORE - analysis.correct;
     app.dom.recommendationText.textContent = passed
-      ? "Nawet po zdaniu egzaminu warto przejść przez błędy — to najszybsza droga do trwałej wiedzy."
-      : "Skup się na dwóch obszarach, które przyniosą Ci najwięcej dodatkowych punktów.";
+      ? "Mimo zaliczenia testu warto przejść przez błędy — to najszybsza droga do trwałej wiedzy."
+      : `Skup się na dwóch obszarach poniżej. Do progu brakuje ${missing} ${namespace.utils.pluralizePoints(missing)}.`;
 
     app.dom.focusList.innerHTML = focusDomains.map((domain, index) => `
       <div class="focus-item">
         <span class="focus-item__index">0${index + 1}</span>
-        <div><strong>${namespace.utils.escapeHtml(domain.title)}</strong><small>${domain.correct}/${domain.total} · ${domain.percent}%</small></div>
+        <div><strong>${namespace.utils.escapeHtml(domain.title)}</strong><small>${domain.correct} poprawne z ${domain.total} · ${domain.percent}%</small></div>
       </div>`).join("");
   }
 
@@ -119,7 +123,12 @@
     }
 
     if (!records.length) {
-      app.dom.reviewList.innerHTML = `<div class="review-empty">Brak pytań w tej kategorii.</div>`;
+      const emptyMessages = {
+        all: "Brak pytań do wyświetlenia.",
+        correct: "Żadna udzielona odpowiedź nie jest poprawna.",
+        incorrect: "Nie ma pytań błędnych ani bez odpowiedzi — wszystkie odpowiedzi są poprawne.",
+      };
+      app.dom.reviewList.innerHTML = `<div class="review-empty">${emptyMessages[filter] || emptyMessages.all}</div>`;
       return;
     }
 
@@ -130,7 +139,7 @@
     const { question, examIndex, selectedOriginalIndex, status } = record;
     if (!question) return "";
 
-    const statusLabel = status === "correct" ? "Poprawna" : status === "incorrect" ? "Błędna" : "Bez odpowiedzi";
+    const statusLabel = status === "correct" ? "Odp. poprawna" : status === "incorrect" ? "Odp. błędna" : "Bez odpowiedzi";
     const order = app.state.optionOrder[question.id] || [0, 1, 2, 3];
 
     const options = order.map((originalIndex, displayIndex) => {
@@ -165,11 +174,12 @@
         </summary>
         <div class="review-item__content">
           ${question.scenario ? `<div class="scenario">${namespace.utils.escapeHtml(question.scenario)}</div>` : ""}
+          ${question.ref ? `<small class="review-item__ref">${namespace.utils.escapeHtml(question.ref)} · Poziom ${namespace.utils.escapeHtml(question.k)}</small>` : ""}
           <h4>${namespace.utils.escapeHtml(question.text)}</h4>
           <div class="review-options">${options}</div>
           <div class="explanation">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5M12 8h.01" /></svg>
-            <span><strong>Wyjaśnienie:</strong> ${namespace.utils.escapeHtml(question.explanation)}</span>
+            <span><strong>Wyjaśnienie</strong> ${namespace.utils.escapeHtml(question.explanation)}</span>
           </div>
         </div>
       </details>`;

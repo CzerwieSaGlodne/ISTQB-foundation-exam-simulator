@@ -41,6 +41,11 @@
   height: 25px;
 }
 
+/* Timeout nie ma wyboru, wiec wyróżniamy go ramka zamiast drugiego przycisku. */
+.confirm-dialog--time {
+  border-top: 3px solid var(--red);
+}
+
 .confirm-dialog h2 {
   margin: 0 0 8px;
   letter-spacing: -0.03em;
