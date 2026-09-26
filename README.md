@@ -2,6 +2,10 @@
 
 Niezależny symulator egzaminu **ISTQB Certified Tester Foundation Level v4.0.1** przygotowany w języku polskim. Aplikacja pozwala przećwiczyć 40 pytań w warunkach zbliżonych do prawdziwego egzaminu, a następnie sprawdzić wynik, czas i poziom przygotowania w każdym obszarze tematycznym.
 
+## Jak powstał projekt
+
+Projekt powstał w ramach ćwiczeń z wykorzystania AI w pracy nad oprogramowaniem. Do jego tworzenia użyłam OpenCode i agenta AI. Rezultaty pracy agenta weryfikowałam i oceniałam samodzielnie.
+
 ![Ekran startowy ISTQB Lab](/screenshots/screenshot-2.png)
 
 ## Funkcje
