@@ -1,0 +1,57 @@
+﻿@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  body,
+  .results {
+    background: #fff !important;
+  }
+
+  .topbar,
+  .site-footer,
+  .result-actions,
+  .review-filters,
+  .page-glow {
+    display: none !important;
+  }
+
+  .results {
+    padding: 0;
+  }
+
+  .result-hero {
+    min-height: 0;
+    color: #111827;
+    background: #edf1ff;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .result-copy p,
+  .result-copy .eyebrow {
+    color: #475569;
+  }
+
+  .result-stats,
+  .panel,
+  .review-item {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .review-item__content {
+    display: block !important;
+  }
+}

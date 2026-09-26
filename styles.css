@@ -1,0 +1,14 @@
+/*
+ * Style entrypoint.
+ * The application remains dependency-free and loads ordinary CSS files in
+ * cascade order, so it also works when index.html is opened directly.
+ */
+@import url("styles/tokens.css");
+@import url("styles/base.css");
+@import url("styles/landing.css");
+@import url("styles/exam.css");
+@import url("styles/results.css");
+@import url("styles/dialogs.css");
+@import url("styles/responsive.css");
+@import url("styles/dark-mode.css");
+@import url("styles/motion-print.css");
